@@ -54,7 +54,6 @@ return {
             { desc = "Find string in current buffer" })
         keymap.set("n", "<leader>fd", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
         keymap.set("n", "<leader>fu", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
         -- LSP
         keymap.set("n", "<leader>fld", "<cmd>Telescope lsp_definitions<cr>", { desc = "Find definitions" })
