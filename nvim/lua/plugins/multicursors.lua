@@ -11,7 +11,7 @@ return {
             mode = { 'v', 'n' },
             '<Leader>z',
             '<cmd>MCstart<cr>',
-            desc = 'Create a selection for selected text or word under the cursor',
+            desc = 'Multicursors',
         },
     },
 }
