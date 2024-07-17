@@ -3,6 +3,8 @@ return {
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "mfussenegger/nvim-dap",
+        "jay-babu/mason-nvim-dap.nvim"
     },
     config = function()
         -- import mason
@@ -10,6 +12,8 @@ return {
 
         -- import mason-lspconfig
         local mason_lspconfig = require("mason-lspconfig")
+
+        local mason_dap = require("mason-nvim-dap")
 
         local mason_tool_installer = require("mason-tool-installer")
 
@@ -28,16 +32,16 @@ return {
             -- list of servers for mason to install
             ensure_installed = {
                 "tinymist",
-                -- "tsserver",
-                -- "html",
-                -- "cssls",
-                -- "tailwindcss",
                 "lua_ls",
-                -- "graphql",
-                -- "emmet_ls",
-                -- "prismals",
-                -- "pyright",
             },
+        })
+
+        mason_dap.setup({
+            ensure_installed = {
+                "cpptools",
+                "codelldb"
+            },
+            automatic_installation = true,
         })
 
         mason_tool_installer.setup({
