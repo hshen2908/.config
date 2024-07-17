@@ -14,16 +14,16 @@ return {
         local whichkey = require("which-key")
         whichkey.add({
             { "<leader>f", group = "Find" },
-            { "<leader>y", group = "Yazi" },
-            { "<leader>u", group = "Utilities" },
+            { "<leader>y", group = "Yazi", icon = "󰇥" },
+            { "<leader>u", group = "Utilities", icon = "" },
             { "<leader>d", group = "Debugger" },
-            { "<leader>e", group = "Explorer" },
+            { "<leader>e", group = "Explorer", icon = "󰙅" },
             { "<leader>g", group = "Git" },
-            { "<leader>l", group = "LSP" },
+            { "<leader>l", group = "LSP", icon = "" },
             { "<leader>t", group = "Tabs" },
-            { "<leader>s", group = "Splits" },
+            { "<leader>s", group = "Splits", icon = "" },
             { "<leader>w", group = "Sessions" },
-            { "<leader>x", group = "Trouble" },
+            { "<leader>x", group = "Trouble", icon = "" },
         })
     end
 }
