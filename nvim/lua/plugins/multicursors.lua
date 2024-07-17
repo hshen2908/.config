@@ -9,7 +9,7 @@ return {
     keys = {
         {
             mode = { 'v', 'n' },
-            '<Leader>z',
+            '<Leader>um',
             '<cmd>MCstart<cr>',
             desc = 'Multicursors',
         },

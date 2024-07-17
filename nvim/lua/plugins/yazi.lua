@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     keys = {
         {
-            "<leader>-",
+            "<leader>yt",
             function()
                 require("yazi").yazi()
             end,
@@ -12,7 +12,7 @@ return {
         },
         {
             -- Open in the current working directory
-            "<leader>cw",
+            "<leader>yw",
             function()
                 require("yazi").yazi(nil, vim.fn.getcwd())
             end,

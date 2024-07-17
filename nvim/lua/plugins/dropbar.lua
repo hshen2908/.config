@@ -10,6 +10,6 @@ return {
             vim.keymap.set(mode, l, r, { desc = desc })
         end
 
-        map("n", "<leader>b", dropbarapi.pick, "Pick Dropbar")
+        map("n", "<leader>ub", dropbarapi.pick, "Pick Dropbar")
     end
 }
