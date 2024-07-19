@@ -23,6 +23,7 @@ return {
             end,
         })
 
+        telescope.load_extension("projects")
         telescope.setup({
             defaults = {
                 path_display = { "smart" },
@@ -42,6 +43,7 @@ return {
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
 
+        keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Fuzzy find projects" })
         keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
         keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Fuzzy find keymaps" })
         keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find buffers" })

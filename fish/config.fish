@@ -11,3 +11,6 @@ alias lsa "eza --tree --recurse --level 2 --hyperlink --long --header --links --
 # pokemon-colorscripts --no-title -r
 
 starship init fish | source
+
+# Created by `pipx` on 2024-07-18 03:06:41
+set PATH $PATH /home/hshen2908/.local/bin

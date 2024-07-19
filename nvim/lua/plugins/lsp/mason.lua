@@ -33,6 +33,7 @@ return {
             ensure_installed = {
                 "tinymist",
                 "lua_ls",
+                "clangd"
             },
         })
 

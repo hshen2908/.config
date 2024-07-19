@@ -5,6 +5,7 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>uh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>un", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>u+", "<C-a>", { desc = "Increment number" }) -- increment
@@ -21,8 +22,8 @@ keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Move to split below" })
 keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move to split to the left" })
 keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to split to the right" })
 
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })                     -- open new tab
-keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current tab" })              -- close current tab
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })                     --  go to next tab
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                 --  go to previous tab
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+keymap.set("n", "<leader>bo", "<cmd>tabnew<CR>", { desc = "Open new tab" })                     -- open new tab
+keymap.set("n", "<leader>bq", "<cmd>tabclose<CR>", { desc = "Close current tab" })              -- close current tab
+keymap.set("n", "<leader>bn", "<cmd>tabn<CR>", { desc = "Go to next tab" })                     --  go to next tab
+keymap.set("n", "<leader>bp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                 --  go to previous tab
+keymap.set("n", "<leader>bf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab

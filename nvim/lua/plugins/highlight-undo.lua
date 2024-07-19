@@ -1,7 +1,6 @@
 return {
-    "lukas-reineke/indent-blankline.nvim",
+    'tzachar/highlight-undo.nvim',
     event = { "BufReadPre", "BufNewFile" },
-    main = "ibl",
     opts = {
     },
 }

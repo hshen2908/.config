@@ -3,9 +3,9 @@ vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 
 vim.o.undofile = true
-
+opt.jumpoptions = "stack,view"
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.cursorline = true
 
 -- tabs and indentation
