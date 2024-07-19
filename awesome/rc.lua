@@ -22,56 +22,56 @@ require("awful.hotkeys_popup.keys")
 local vicious = require("vicious")
 
 local separatorwidget = wibox.widget.textbox("|")
-separatorwidget.font = "RobotoMono Nerd Font Mono 16"
+separatorwidget.font = "RobotoMono Nerd Font Mono 8"
 
 local clockwidget = wibox.widget.textbox()
-clockwidget.font = "RobotoMono Nerd Font Mono 16"
+clockwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.uptime)
 vicious.register(clockwidget, vicious.widgets.date, "%F %T", 1)
 
 local utmwidget = wibox.widget.textbox()
-utmwidget.font = "RobotoMono Nerd Font Mono 16"
+utmwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.uptime)
 vicious.register(utmwidget, vicious.widgets.uptime, "UTM: $2H", 1800)
 
 -- local pkgwidget = wibox.widget.textbox()
--- pkgwidget.font = "RobotoMono Nerd Font Mono 16"
+-- pkgwidget.font = "RobotoMono Nerd Font Mono 8"
 -- vicious.cache(vicious.widgets.pkg)
 -- vicious.register(pkgwidget, vicious.widgets.pkg, "PKG: $1", 3600, "Arch")
 
 local cpuwidget = wibox.widget.textbox()
-cpuwidget.font = "RobotoMono Nerd Font Mono 16"
+cpuwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.cpu)
 vicious.register(cpuwidget, vicious.widgets.cpu, "CPU: $1%", 3)
 
 local memwidget = wibox.widget.textbox()
-memwidget.font = "RobotoMono Nerd Font Mono 16"
+memwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.mem)
 vicious.register(memwidget, vicious.widgets.mem, "MEM: $1%", 15)
 
 local dskwidget = wibox.widget.textbox()
-dskwidget.font = "RobotoMono Nerd Font Mono 16"
+dskwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.fs)
 vicious.register(dskwidget, vicious.widgets.fs, "DSK: / ${/ used_gb}GiB /mnt/share ${/mnt/share used_gb}GiB", 300)
 
 local batwidget = wibox.widget.textbox()
-batwidget.font = "RobotoMono Nerd Font Mono 16"
+batwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.bat)
 vicious.register(batwidget, vicious.widgets.bat, "BAT: $2%", 61, "BAT0")
 
 local volwidget = wibox.widget.textbox()
-volwidget.font = "RobotoMono Nerd Font Mono 16"
+volwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.volume)
 vicious.register(volwidget, vicious.widgets.volume, "VOL: $1%", 1, "Master")
 
 local wifiwidget = wibox.widget.textbox()
-wifiwidget.font = "RobotoMono Nerd Font Mono 16"
+wifiwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.wifi)
 vicious.register(wifiwidget, vicious.widgets.wifi, "NET: ${ssid}", 61, "wlan0")
 --- }}}
 
 local keyboardbutton = wibox.widget.textbox("")
-keyboardbutton.font = "RobotoMono Nerd Font Mono 32"
+keyboardbutton.font = "RobotoMono Nerd Font Mono 16"
 IsVirtualKeyboardOn = false
 function toggle_virtual_keyboard()
     if (IsVirtualKeyboardOn) then
@@ -89,7 +89,7 @@ keyboardbutton:buttons(gears.table.join(
 ))
 
 local displaybutton = wibox.widget.textbox("󰦉")
-displaybutton.font = "RobotoMono Nerd Font Mono 32"
+displaybutton.font = "RobotoMono Nerd Font Mono 16"
 LANDSCAPE = 1
 PORTRAIT = 0
 TABLET_LANDSCAPE = -1
@@ -135,7 +135,7 @@ displaybutton:buttons(gears.table.join(
 ))
 
 local rotatebutton = wibox.widget.textbox("󰢅 ")
-rotatebutton.font = "RobotoMono Nerd Font Mono 32"
+rotatebutton.font = "RobotoMono Nerd Font Mono 16"
 function rotate_display()
     if DisplayMode ~= LANDSCAPE then
         set_display_landscape()
@@ -334,6 +334,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
+        layout  = {
+            forced_width = 1400,
+            spacing = 12,
+            spacing_widget = separatorwidget,
+            layout = wibox.layout.flex.horizontal,
+        },
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons
     }
@@ -344,20 +350,21 @@ awful.screen.connect_for_each_screen(function(s)
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
+        expand = "none",
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             -- mylauncher,
             s.mytaglist,
             s.mypromptbox,
+            s.mytasklist, -- Middle widget
         },
-        s.mytasklist, -- Middle widget
-        {             -- Right widgets
+        clockwidget,
+        { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 12,
             -- mykeyboardlayout,
             wibox.widget.systray(),
-            clockwidget,
-            separatorwidget,
+            -- clockwidget,
             utmwidget,
             separatorwidget,
             -- pkgwidget,
