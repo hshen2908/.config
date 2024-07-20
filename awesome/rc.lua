@@ -517,6 +517,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "w", function() awful.spawn.with_shell("$HOME/.config/rofi/scripts/web.sh") end,
         { description = "run prompt", group = "launcher" }),
     awful.key({ modkey }, "i", function() awful.spawn.with_shell("kitty nmtui") end,
+        { description = "run prompt", group = "launcher" }),
+    awful.key({ modkey }, "/", function() awful.spawn.with_shell("kitty nvim") end,
         { description = "run prompt", group = "launcher" })
 
 -- awful.key({ modkey }, "x",

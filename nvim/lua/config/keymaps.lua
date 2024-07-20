@@ -10,6 +10,8 @@ keymap.set("n", "<leader>un", ":set relativenumber!<CR>", { desc = "Toggle relat
 -- increment/decrement numbers
 keymap.set("n", "<leader>u+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>u-", "<C-x>", { desc = "Decrement number" }) -- decrement
+keymap.set("n", "<leader>ul", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
+keymap.set("n", "<leader>uc", "<cmd>edit ~/.config/nvim<cr>", { desc = "Configure NVIM" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically

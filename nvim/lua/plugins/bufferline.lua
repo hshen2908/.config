@@ -10,4 +10,5 @@ return {
             always_show_bufferline = true
         },
     },
+    keys = { { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Bufferline Pick" } },
 }

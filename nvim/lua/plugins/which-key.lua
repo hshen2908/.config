@@ -14,17 +14,17 @@ return {
         local whichkey = require("which-key")
         whichkey.add({
             { "<leader>f", group = "Find" },
-            { "<leader>y", group = "Yazi", icon = "󰇥" },
-            { "<leader>u", group = "Utilities", icon = "" },
+            { "<leader>y", group = "Yazi", icon = { icon = "󰇥", color = "yellow" } },
+            { "<leader>u", group = "Utilities", icon = { icon = "", color = "orange" } },
             { "<leader>d", group = "Debugger" },
-            { "<leader>e", group = "Explorer", icon = "󰙅" },
+            { "<leader>e", group = "Explorer", icon = { icon = "󰙅", color = "green" } },
             { "<leader>g", group = "Git" },
-            { "<leader>l", group = "LSP", icon = "" },
-            { "<leader>b", group = "Buffers" },
-            { "<leader>t", group = "Test", icon = "󰙨" },
-            { "<leader>s", group = "Splits", icon = "" },
+            { "<leader>l", group = "LSP", icon = { icon = "", color = "blue" } },
+            { "<leader>b", group = "Tabs" },
+            { "<leader>t", group = "Test", icon = { icon = "󰙨", color = "purple" } },
+            { "<leader>s", group = "Splits", icon = { icon = "", color = "orange" } },
             { "<leader>w", group = "Sessions" },
-            { "<leader>x", group = "Trouble", icon = "" },
+            { "<leader>x", group = "Trouble", icon = { icon = "", color = "yellow" } },
         })
     end
 }
