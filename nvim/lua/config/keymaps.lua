@@ -12,6 +12,7 @@ keymap.set("n", "<leader>u+", "<C-a>", { desc = "Increment number" }) -- increme
 keymap.set("n", "<leader>u-", "<C-x>", { desc = "Decrement number" }) -- decrement
 keymap.set("n", "<leader>ul", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
 keymap.set("n", "<leader>uc", "<cmd>edit ~/.config/nvim<cr>", { desc = "Configure NVIM" })
+keymap.set("n", "<leader>up", function() vim.ui.open("main.pdf") end, { desc = "Open main.pdf" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically

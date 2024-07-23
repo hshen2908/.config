@@ -76,5 +76,27 @@ return {
         keymap.set("n", "<leader>fgf", "<cmd>Telescope git_files<cr>", { desc = "Find files" })
         keymap.set("n", "<leader>fgh", "<cmd>Telescope git_stash<cr>", { desc = "Find stash" })
         keymap.set("n", "<leader>fgs", "<cmd>Telescope git_status<cr>", { desc = "Find status" })
+
+        vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = "#000000", bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = "#000000", bg = "#000000" })
+        --
+        -- vim.api.nvim_set_hl(0, "TelescopeMatching", { bg = "#000000" })
+        -- -- vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#000000", bg = "#000000" })
+        --
+        -- -- vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { bg = "#000000" })
+        -- -- vim.api.nvim_set_hl(0, "TelescopePromptCounter", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#000000", bg = "#000000" })
+        -- --
+        -- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#000000" })
+        vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#000000", bg = "#000000" })
+        -- --
+        -- -- vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#000000", bg = "#000000" })
+        -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#000000" })
     end,
 }

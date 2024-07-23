@@ -1,4 +1,19 @@
 return {
+    -- {
+    --     "scottmckendry/cyberdream.nvim",
+    --     version = false,
+    --     lazy = false,
+    --     priority = 1000, -- make sure to load this before all the other start plugins
+    --     -- Optional; default configuration will be used if setup isn't called.
+    --     opts = {
+    --         transparent = true,
+    --     },
+    --     config = function(_, opts)
+    --         local cyberdream = require("cyberdream")
+    --         cyberdream.setup(opts)
+    --         vim.cmd("colorscheme cyberdream")
+    --     end
+    -- },
     {
         'navarasu/onedark.nvim',
         lazy = false,

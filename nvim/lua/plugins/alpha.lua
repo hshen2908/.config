@@ -78,17 +78,17 @@ return {
         --     "                                                     ",
         -- }
         dashboard.section.header.opts.hl = "AlphaHeader"
-        vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#BF68D9" })
+        -- vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#BF68D9" })
         -- Set menu
         dashboard.section.buttons.val = {
             dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-            dashboard.button("SPC ee", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
-            dashboard.button("SPC fp", "  > Find Project", "<cmd>Telescope projects<CR>"),
-            dashboard.button("SPC ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
-            dashboard.button("SPC fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
-            dashboard.button("SPC wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-            dashboard.button("SPC ul", "󰒲  > Lazy", "<cmd>Lazy <cr>"),
-            dashboard.button("SPC uc", "  > Configure NVIM", "<cmd>edit ~/.config/nvim<cr>"),
+            dashboard.button("SPC e e", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+            dashboard.button("SPC f p", "  > Find Project", "<cmd>Telescope projects<CR>"),
+            dashboard.button("SPC f f", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
+            dashboard.button("SPC f s", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
+            dashboard.button("SPC w r", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
+            dashboard.button("SPC u l", "󰒲  > Lazy", "<cmd>Lazy <cr>"),
+            dashboard.button("SPC u c", "  > Configure NVIM", "<cmd>edit ~/.config/nvim<cr>"),
             dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
         }
 
