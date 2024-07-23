@@ -12,5 +12,7 @@ alias lsa "eza --tree --recurse --level 2 --hyperlink --long --header --links --
 
 starship init fish | source
 
+set -gx EDITOR nvim
+
 # Created by `pipx` on 2024-07-18 03:06:41
 set PATH $PATH /home/hshen2908/.local/bin
