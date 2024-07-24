@@ -52,7 +52,8 @@ vicious.register(memwidget, vicious.widgets.mem, "MEM: $1%", 15)
 local dskwidget = wibox.widget.textbox()
 dskwidget.font = "RobotoMono Nerd Font Mono 8"
 vicious.cache(vicious.widgets.fs)
-vicious.register(dskwidget, vicious.widgets.fs, "DSK: / ${/ used_gb}GiB /mnt/share ${/mnt/share used_gb}GiB", 300)
+-- vicious.register(dskwidget, vicious.widgets.fs, "DSK: / ${/ used_gb}GiB /mnt/share ${/mnt/share used_gb}GiB", 300)
+vicious.register(dskwidget, vicious.widgets.fs, "DSK: ${/ used_gb}GiB ${/mnt/share used_gb}GiB", 300)
 
 local batwidget = wibox.widget.textbox()
 batwidget.font = "RobotoMono Nerd Font Mono 8"
@@ -134,7 +135,7 @@ displaybutton:buttons(gears.table.join(
     awful.button({}, 1, nil, toggle_tablet_portrait_mode)
 ))
 
-local rotatebutton = wibox.widget.textbox("󰢅 ")
+local rotatebutton = wibox.widget.textbox("󰢅")
 rotatebutton.font = "RobotoMono Nerd Font Mono 16"
 function rotate_display()
     if DisplayMode ~= LANDSCAPE then
@@ -335,10 +336,10 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         layout  = {
-            forced_width = 1400,
+            -- forced_width = 1400,
             spacing = 12,
             spacing_widget = separatorwidget,
-            layout = wibox.layout.flex.horizontal,
+            layout = wibox.layout.fixed.horizontal,
         },
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons
@@ -353,7 +354,11 @@ awful.screen.connect_for_each_screen(function(s)
         expand = "none",
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
+            spacing = 12,
             -- mylauncher,
+            displaybutton,
+            keyboardbutton,
+            rotatebutton,
             s.mytaglist,
             s.mypromptbox,
             s.mytasklist, -- Middle widget
@@ -380,10 +385,10 @@ awful.screen.connect_for_each_screen(function(s)
             volwidget,
             separatorwidget,
             wifiwidget,
-            separatorwidget,
-            displaybutton,
-            keyboardbutton,
-            rotatebutton,
+            -- separatorwidget,
+            -- displaybutton,
+            -- keyboardbutton,
+            -- rotatebutton,
             -- s.mylayoutbox,
         },
     }
