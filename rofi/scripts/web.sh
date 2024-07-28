@@ -20,6 +20,7 @@
 declare -A URLS
 
 URLS=(
+  ["devdocs"]="https://devdocs.io/"
   ["google"]="https://www.google.com/search?q="
   ["bing"]="https://www.bing.com/search?q="
   ["yahoo"]="https://search.yahoo.com/search?p="

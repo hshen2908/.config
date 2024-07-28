@@ -17,6 +17,7 @@ return {
             { "<leader>y", group = "Yazi", icon = { icon = "󰇥", color = "yellow" } },
             { "<leader>u", group = "Utilities", icon = { icon = "", color = "orange" } },
             { "<leader>d", group = "Debugger" },
+            { "<leader>r", group = "Devdocs", icon = { icon = "󰺮", color = "blue" } },
             { "<leader>e", group = "Explorer", icon = { icon = "󰙅", color = "green" } },
             { "<leader>g", group = "Git" },
             { "<leader>l", group = "LSP", icon = { icon = "", color = "blue" } },

@@ -1,4 +1,17 @@
 return {
+    -- { "EdenEast/nightfox.nvim", lazy = false, priority = 1000, opts = { options = { transparent = true } } },
+    -- {
+    --     'AlexvZyl/nordic.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         transparent_bg = true,
+    --     },
+    --     config = function(_, opts)
+    --         require 'nordic'.setup(opts)
+    --         require 'nordic'.load()
+    --     end
+    -- },
     -- {
     --     "scottmckendry/cyberdream.nvim",
     --     version = false,
