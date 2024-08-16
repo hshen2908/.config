@@ -532,6 +532,8 @@ globalkeys = gears.table.join(
         { description = "run prompt", group = "launcher" }),
     awful.key({ modkey }, "i", function() awful.spawn.with_shell("kitty nmtui") end,
         { description = "run prompt", group = "launcher" }),
+    awful.key({ modkey }, "c", function() awful.spawn.with_shell("google-chrome-stable") end,
+        { description = "run prompt", group = "launcher" }),
     awful.key({ modkey }, "/", function() awful.spawn.with_shell("kitty nvim") end,
         { description = "run prompt", group = "launcher" })
 

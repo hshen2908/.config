@@ -32,6 +32,7 @@ URLS=(
   ["twitch"]="https://twitch.tv/"
   ['libgen']="https://libgen.is/search.php?&req="
   ["annasarchive"]="https://annas-archive.gs/search?q="
+  ["wikipedia"]="https://en.wikipedia.org/wiki/"
   # ["yandex"]="https://yandex.ru/yandsearch?text="
   # ["goodreads"]="https://www.goodreads.com/search?q="
   # ["symbolhound"]="http://symbolhound.com/?q="

@@ -6,6 +6,7 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "nvim-tree/nvim-web-devicons",
         "folke/todo-comments.nvim",
+        "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function()
         local telescope = require("telescope")
@@ -43,6 +44,7 @@ return {
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
 
+        keymap.set("n", "<leader>fa", "<cmd>Telescope file_browser<cr>", { desc = "Fuzzy file browser" })
         keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Fuzzy find projects" })
         keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
         keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Fuzzy find keymaps" })

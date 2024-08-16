@@ -32,6 +32,7 @@ return {
             -- list of servers for mason to install
             ensure_installed = {
                 "tinymist",
+                "pylsp",
                 "lua_ls",
                 "clangd"
             },

@@ -33,7 +33,7 @@ return {
         map("n", "<leader>dc", dap.continue, "Continue")
         map("n", "<leader>db", dap.toggle_breakpoint, "Toggle Breakpoint")
         map("n", "<leader>dn", dap.step_over, "Step Over")
-        map("n", "<leader>di", dap.step_into, "Setp Into")
+        map("n", "<leader>di", dap.step_into, "Step Into")
         map("n", "<leader>do", dap.step_out, "Step Out")
         map("n", "<leader>dx", function()
             dap.clear_breakpoints()

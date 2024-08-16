@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-
 keymap.set("n", "<leader>uh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>un", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
@@ -13,6 +11,8 @@ keymap.set("n", "<leader>u-", "<C-x>", { desc = "Decrement number" }) -- decreme
 keymap.set("n", "<leader>ul", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
 keymap.set("n", "<leader>uc", "<cmd>edit ~/.config/nvim<cr>", { desc = "Configure NVIM" })
 keymap.set("n", "<leader>up", function() vim.ui.open("main.pdf") end, { desc = "Open main.pdf" })
+keymap.set("n", "<leader>ux", function() vim.cmd("windo diffthis") end, { desc = "Diff Splits" })
+keymap.set("n", "<leader>uz", function() vim.cmd("windo diffoff") end, { desc = "Diff Off" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically
