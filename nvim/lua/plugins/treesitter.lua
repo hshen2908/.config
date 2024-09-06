@@ -42,6 +42,7 @@ return {
                 "vimdoc",
                 "c",
                 "cpp",
+                "erlang",
                 "python",
             },
             incremental_selection = {

@@ -34,14 +34,16 @@ return {
                 "tinymist",
                 "pylsp",
                 "lua_ls",
-                "clangd"
+                "clangd",
+                "elp",
             },
         })
 
         mason_dap.setup({
             ensure_installed = {
                 "cpptools",
-                "codelldb"
+                "codelldb",
+                "erlang-debugger",
             },
             automatic_installation = true,
         })

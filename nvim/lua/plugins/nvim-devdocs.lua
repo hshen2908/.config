@@ -14,6 +14,7 @@ return {
             "cpp",
             "c",
             "bash",
+            "erlang-26",
         }
     },
     keys = {
