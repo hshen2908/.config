@@ -16,6 +16,7 @@ return {
             { "<leader>f", group = "Find" },
             { "<leader>c", group = "Terminal" },
             { "<leader>y", group = "Yazi", icon = { icon = "󰇥", color = "yellow" } },
+            { "<leader>v", group = "Latex", icon = { icon = "󰿈", color = "purple" } },
             { "<leader>u", group = "Utilities", icon = { icon = "", color = "orange" } },
             { "<leader>d", group = "Debugger" },
             { "<leader>r", group = "Devdocs", icon = { icon = "󰺮", color = "blue" } },
