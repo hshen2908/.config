@@ -44,6 +44,7 @@ return {
                 "cpp",
                 "erlang",
                 "python",
+                "latex",
             },
             incremental_selection = {
                 enable = true,

@@ -35,6 +35,7 @@ return {
                 "pylsp",
                 "lua_ls",
                 "clangd",
+                "texlab",
                 "elp",
             },
         })

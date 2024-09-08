@@ -19,6 +19,7 @@ return {
             },
         })
 
+        autopairs.add_rule(Rule("$", "$", "tex"))
         autopairs.add_rule(Rule("$", "$", "typst"))
         autopairs.add_rule(Rule("```", "```", "typst"))
 
