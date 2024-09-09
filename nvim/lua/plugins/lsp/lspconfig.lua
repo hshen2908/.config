@@ -50,6 +50,11 @@ return {
                 opts.desc = "Show buffer diagnostics"
                 keymap.set("n", "<leader>lb", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
+                opts.desc = "Toggle line diagnostics"
+                keymap.set("n", "<leader>lt", function()
+                    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+                end, opts) -- show diagnostics for line
+
                 opts.desc = "Show line diagnostics"
                 keymap.set("n", "<leader>ll", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
