@@ -45,6 +45,7 @@ return {
                 "erlang",
                 "python",
                 "latex",
+                "racket",
             },
             incremental_selection = {
                 enable = true,
