@@ -50,30 +50,35 @@ return {
                 --     "                                   ",
                 -- },
                 shortcut = {
-                    { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
                     {
-                        icon_hl = '@variable',
+                        desc = '󰊳 Update',
+                        group = '@annotation',
+                        action = 'Lazy update',
+                        key = 'u'
+                    },
+                    {
+                        -- icon_hl = '@variable',
                         desc = ' Files',
-                        group = 'Label',
+                        group = '@annotation',
                         action = 'Telescope find_files',
                         key = 'f',
                     },
                     {
                         -- desc = ' Apps',
                         desc = ' Projects',
-                        group = "String",
+                        group = '@annotation',
                         action = 'Telescope projects',
                         key = 'p',
                     },
                     {
                         desc = '󰁯 Session',
-                        icon_hl = "@function",
+                        group = '@annotation',
                         action = 'SessionRestore',
                         key = 'r',
                     },
                     {
                         desc = ' dotfiles',
-                        group = 'Number',
+                        group = '@annotation',
                         action = 'edit ~/.config/nvim',
                         key = 'd',
                     },
@@ -81,6 +86,7 @@ return {
                 footer = {},
             }
         }
+        vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#FFFFFF", bg = "#000000" })
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 }
