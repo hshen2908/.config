@@ -405,11 +405,15 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({ modkey, "Control" }, ";", function() awful.spawn.with_shell("keynav") end,
+        { description = "launch keynav", group = "awesome" }),
     awful.key({ modkey, "Control" }, "/", toggle_virtual_keyboard,
         { description = "virtual keyboard", group = "awesome" }),
     awful.key({ modkey, "Control" }, "[",
-        function() awful.spawn.with_shell(
-            "xrandr --output eDP-1 --brightness 0.5 && xrandr --output eDP-2 --brightness 0.5") end,
+        function()
+            awful.spawn.with_shell(
+                "xrandr --output eDP-1 --brightness 0.5 && xrandr --output eDP-2 --brightness 0.5")
+        end,
         { description = "show help", group = "awesome" }),
     awful.key({ modkey, "Control" }, "]",
         function() awful.spawn.with_shell("xrandr --output eDP-1 --brightness 1 && xrandr --output eDP-2 --brightness 1") end,
