@@ -15,6 +15,9 @@ return {
             "c",
             "bash",
             "erlang-26",
+            "python-3.9",
+            "matplotlib-3.7",
+            "numpy-2.0",
         }
     },
     keys = {
