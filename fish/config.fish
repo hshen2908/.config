@@ -19,3 +19,4 @@ set -gx EDITOR nvim
 
 # Created by `pipx` on 2024-07-18 03:06:41
 set PATH $PATH /home/hshen2908/.local/bin
+set PATH $PATH ~/.config/emacs/bin
