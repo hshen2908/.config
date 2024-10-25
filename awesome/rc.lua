@@ -542,6 +542,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "c", function() awful.spawn.with_shell("google-chrome-stable") end,
         { description = "run prompt", group = "launcher" }),
     awful.key({ modkey }, "/", function() awful.spawn.with_shell("kitty nvim") end,
+        { description = "run prompt", group = "launcher" }),
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("emacs") end,
         { description = "run prompt", group = "launcher" })
 
 -- awful.key({ modkey }, "x",
