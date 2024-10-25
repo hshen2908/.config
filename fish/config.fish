@@ -11,6 +11,7 @@ alias lsa "eza --tree --recurse --level 2 --hyperlink --long --header --links --
 alias cdc "cd ~/.config/"
 alias cds "cd /mnt/share/"
 
+alias emacs "emacsclient -c -a 'emacs'"
 # pokemon-colorscripts --no-title -r
 
 starship init fish | source
@@ -19,3 +20,4 @@ set -gx EDITOR nvim
 
 # Created by `pipx` on 2024-07-18 03:06:41
 set PATH $PATH /home/hshen2908/.local/bin
+set PATH $PATH ~/.config/emacs/bin

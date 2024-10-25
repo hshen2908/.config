@@ -83,8 +83,6 @@ return {
         end
 
 
-
-
         mason_lspconfig.setup_handlers({
             -- default handler for installed servers
             function(server_name)
@@ -114,28 +112,74 @@ return {
                     },
                 })
             end,
-            ["svelte"] = function()
-                -- configure svelte server
-                lspconfig["svelte"].setup({
+            -- ["svelte"] = function()
+            --     -- configure svelte server
+            --     lspconfig["svelte"].setup({
+            --         capabilities = capabilities,
+            --         on_attach = function(client, bufnr)
+            --             vim.api.nvim_create_autocmd("BufWritePost", {
+            --                 pattern = { "*.js", "*.ts" },
+            --                 callback = function(ctx)
+            --                     -- Here use ctx.match instead of ctx.file
+            --                     client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+            --                 end,
+            --             })
+            --         end,
+            --     })
+            -- end,
+            ["biome"] = function()
+                -- configure graphql language server
+                lspconfig["html"].setup({
                     capabilities = capabilities,
-                    on_attach = function(client, bufnr)
-                        vim.api.nvim_create_autocmd("BufWritePost", {
-                            pattern = { "*.js", "*.ts" },
-                            callback = function(ctx)
-                                -- Here use ctx.match instead of ctx.file
-                                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+                    cmd = { "vscode-html-language-server", "--stdio" },
+                    filetypes = { "html", "templ" },
+                    single_file_support = false,
+                    init_options = {
+                        configurationSection = { "html", "css", "javascript" },
+                        embeddedLanguages = {
+                            css = true,
+                            javascript = true
+                        },
+                        provideFormatter = true
+                    },
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    on_attach = function()
+                        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+                            pattern = "*.html",
+                            callback = function()
+                                local buf = vim.api.nvim_get_current_buf()
+                                vim.api.nvim_set_option_value("filetype", "html", { buf = buf })
                             end,
                         })
                     end,
                 })
             end,
-            ["graphql"] = function()
+            ["biome"] = function()
                 -- configure graphql language server
-                lspconfig["graphql"].setup({
+                lspconfig["biome"].setup({
                     capabilities = capabilities,
-                    filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+                    cmd = { "biome", "lsp-proxy" },
+                    filetypes = { "astro", "css", "graphql", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescript.tsx", "typescriptreact", "vue" },
+                    single_file_support = false,
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    on_attach = function()
+                        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+                            pattern = "*.js",
+                            callback = function()
+                                local buf = vim.api.nvim_get_current_buf()
+                                vim.api.nvim_set_option_value("filetype", "javascript", { buf = buf })
+                            end,
+                        })
+                    end,
                 })
             end,
+            -- ["graphql"] = function()
+            --     -- configure graphql language server
+            --     lspconfig["graphql"].setup({
+            --         capabilities = capabilities,
+            --         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+            --     })
+            -- end,
             ["emmet_ls"] = function()
                 -- configure emmet language server
                 lspconfig["emmet_ls"].setup({
