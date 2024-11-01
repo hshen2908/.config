@@ -173,13 +173,15 @@ return {
                     end,
                 })
             end,
-            -- ["graphql"] = function()
-            --     -- configure graphql language server
-            --     lspconfig["graphql"].setup({
-            --         capabilities = capabilities,
-            --         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-            --     })
-            -- end,
+            ["sqlls"] = function()
+                -- configure graphql language server
+                lspconfig["sqlls"].setup({
+                    capabilities = capabilities,
+                    cmd = { "sql-language-server", "up", "--method", "stdio" },
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    filetypes = { "sql", "mysql" },
+                })
+            end,
             ["emmet_ls"] = function()
                 -- configure emmet language server
                 lspconfig["emmet_ls"].setup({
