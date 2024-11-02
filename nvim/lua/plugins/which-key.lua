@@ -14,6 +14,7 @@ return {
         local whichkey = require("which-key")
         whichkey.add({
             { "<leader>f", group = "Find" },
+            { "<leader>o", group = "Fold", icon = { icon = "", color = "purple" } },
             { "<leader>c", group = "Terminal" },
             { "<leader>y", group = "Yazi", icon = { icon = "󰇥", color = "yellow" } },
             { "<leader>v", group = "Latex", icon = { icon = "󰿈", color = "purple" } },
