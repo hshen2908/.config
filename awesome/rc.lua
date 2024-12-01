@@ -543,7 +543,7 @@ globalkeys = gears.table.join(
         { description = "run prompt", group = "launcher" }),
     awful.key({ modkey }, "/", function() awful.spawn.with_shell("kitty nvim") end,
         { description = "run prompt", group = "launcher" }),
-    awful.key({ modkey }, "e", function() awful.spawn.with_shell("emacs") end,
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("emacsclient -c -a '/usr/bin/emacs'") end,
         { description = "run prompt", group = "launcher" })
 
 -- awful.key({ modkey }, "x",

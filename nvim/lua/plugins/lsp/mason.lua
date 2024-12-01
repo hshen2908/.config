@@ -61,8 +61,6 @@ return {
                 "isort",    -- python formatter
                 "black",    -- python formatter
                 "pylint",
-                "sql-formatter",
-                "sqlfmt",
                 -- "eslint_d",
             },
         })

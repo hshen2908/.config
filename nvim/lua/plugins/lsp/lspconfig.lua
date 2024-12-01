@@ -176,6 +176,15 @@ return {
                     end,
                 })
             end,
+            ["sqls"] = function()
+                -- configure graphql language server
+                lspconfig["sqls"].setup({
+                    capabilities = capabilities,
+                    cmd = { "sqls" },
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    filetypes = { "sql", "mysql" },
+                })
+            end,
             ["sqlls"] = function()
                 -- configure graphql language server
                 lspconfig["sqlls"].setup({

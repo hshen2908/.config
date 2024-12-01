@@ -6,8 +6,9 @@ keymap.set("n", "<leader>uh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>un", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>u+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>u-", "<C-x>", { desc = "Decrement number" }) -- decrement
+keymap.set("n", "<leader>u+", "<C-a>", { desc = "Increment number" })                     -- increment
+keymap.set("n", "<leader>u-", "<C-x>", { desc = "Decrement number" })                     -- decrement
+keymap.set("n", "<leader>ut", "<cmd>windo set scrollbind!<cr>", { desc = "Scroll Bind" }) -- decrement
 keymap.set("n", "<leader>ul", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
 keymap.set("n", "<leader>uc", "<cmd>edit ~/.config/nvim<cr>", { desc = "Configure NVIM" })
 keymap.set("n", "<leader>up", function() vim.ui.open("main.pdf") end, { desc = "Open main.pdf" })
