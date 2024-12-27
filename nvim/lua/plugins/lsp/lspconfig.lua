@@ -130,31 +130,13 @@ return {
             --         end,
             --     })
             -- end,
-            ["biome"] = function()
+            ["ts_ls"] = function()
                 -- configure graphql language server
-                lspconfig["html"].setup({
+                lspconfig["ts_ls"].setup({
                     capabilities = capabilities,
-                    cmd = { "vscode-html-language-server", "--stdio" },
-                    filetypes = { "html", "templ" },
+                    filetypes = { "astro", "css", "graphql", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescript.tsx", "typescriptreact", "vue" },
                     single_file_support = false,
-                    init_options = {
-                        configurationSection = { "html", "css", "javascript" },
-                        embeddedLanguages = {
-                            css = true,
-                            javascript = true
-                        },
-                        provideFormatter = true
-                    },
                     root_dir = lspconfig.util.root_pattern('.git'),
-                    on_attach = function()
-                        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-                            pattern = "*.html",
-                            callback = function()
-                                local buf = vim.api.nvim_get_current_buf()
-                                vim.api.nvim_set_option_value("filetype", "html", { buf = buf })
-                            end,
-                        })
-                    end,
                 })
             end,
             ["biome"] = function()

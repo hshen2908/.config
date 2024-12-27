@@ -42,6 +42,7 @@ return {
                 "emmet_ls",
                 "cssls",
                 "sqlls",
+                "ts_ls",
             },
         })
 

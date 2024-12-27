@@ -16,6 +16,7 @@ return {
             { "<leader>f", group = "Find" },
             { "<leader>o", group = "Fold", icon = { icon = "", color = "purple" } },
             { "<leader>k", group = "Debug", },
+            { "<leader>n", group = "Notifications", },
             { "<leader>j", group = "Refactor", icon = { icon = "󰦻", color = "blue" } },
             { "<leader>a", group = "Assembly", icon = { icon = "", color = "blue" } },
             { "<leader>h", group = "Hex", icon = { icon = "", color = "purple" } },
