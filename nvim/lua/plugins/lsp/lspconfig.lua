@@ -74,7 +74,10 @@ return {
 
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
-
+        capabilities.textDocument.foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+        }
         -- Change the Diagnostic symbols in the sign column (gutter)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
@@ -127,31 +130,24 @@ return {
             --         end,
             --     })
             -- end,
-            ["biome"] = function()
+            ["clangd"] = function()
                 -- configure graphql language server
-                lspconfig["html"].setup({
+                lspconfig["clangd"].setup({
                     capabilities = capabilities,
-                    cmd = { "vscode-html-language-server", "--stdio" },
-                    filetypes = { "html", "templ" },
-                    single_file_support = false,
-                    init_options = {
-                        configurationSection = { "html", "css", "javascript" },
-                        embeddedLanguages = {
-                            css = true,
-                            javascript = true
-                        },
-                        provideFormatter = true
+                    filetypes = {
+                        "c", "cpp", "objc", "objcpp", "cuda"
                     },
+                    single_file_support = true,
                     root_dir = lspconfig.util.root_pattern('.git'),
-                    on_attach = function()
-                        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-                            pattern = "*.html",
-                            callback = function()
-                                local buf = vim.api.nvim_get_current_buf()
-                                vim.api.nvim_set_option_value("filetype", "html", { buf = buf })
-                            end,
-                        })
-                    end,
+                })
+            end,
+            ["ts_ls"] = function()
+                -- configure graphql language server
+                lspconfig["ts_ls"].setup({
+                    capabilities = capabilities,
+                    filetypes = { "astro", "graphql", "javascript", "javascriptreact", "svelte", "typescript", "typescript.tsx", "typescriptreact", "vue" },
+                    single_file_support = false,
+                    root_dir = lspconfig.util.root_pattern('.git'),
                 })
             end,
             ["biome"] = function()
@@ -173,13 +169,24 @@ return {
                     end,
                 })
             end,
-            -- ["graphql"] = function()
-            --     -- configure graphql language server
-            --     lspconfig["graphql"].setup({
-            --         capabilities = capabilities,
-            --         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-            --     })
-            -- end,
+            ["sqls"] = function()
+                -- configure graphql language server
+                lspconfig["sqls"].setup({
+                    capabilities = capabilities,
+                    cmd = { "sqls" },
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    filetypes = { "sql", "mysql" },
+                })
+            end,
+            ["sqlls"] = function()
+                -- configure graphql language server
+                lspconfig["sqlls"].setup({
+                    capabilities = capabilities,
+                    cmd = { "sql-language-server", "up", "--method", "stdio" },
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                    filetypes = { "sql", "mysql" },
+                })
+            end,
             ["emmet_ls"] = function()
                 -- configure emmet language server
                 lspconfig["emmet_ls"].setup({

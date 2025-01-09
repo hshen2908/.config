@@ -46,6 +46,8 @@ return {
                 "python",
                 "latex",
                 "racket",
+                "sql",
+                "go"
             },
             incremental_selection = {
                 enable = true,

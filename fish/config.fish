@@ -11,7 +11,6 @@ alias lsa "eza --tree --recurse --level 2 --hyperlink --long --header --links --
 alias cdc "cd ~/.config/"
 alias cds "cd /mnt/share/"
 
-alias emacs "emacsclient -c -a 'emacs'"
 # pokemon-colorscripts --no-title -r
 
 starship init fish | source
