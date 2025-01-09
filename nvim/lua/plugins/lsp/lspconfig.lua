@@ -130,11 +130,22 @@ return {
             --         end,
             --     })
             -- end,
+            ["clangd"] = function()
+                -- configure graphql language server
+                lspconfig["clangd"].setup({
+                    capabilities = capabilities,
+                    filetypes = {
+                        "c", "cpp", "objc", "objcpp", "cuda"
+                    },
+                    single_file_support = true,
+                    root_dir = lspconfig.util.root_pattern('.git'),
+                })
+            end,
             ["ts_ls"] = function()
                 -- configure graphql language server
                 lspconfig["ts_ls"].setup({
                     capabilities = capabilities,
-                    filetypes = { "astro", "css", "graphql", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescript.tsx", "typescriptreact", "vue" },
+                    filetypes = { "astro", "graphql", "javascript", "javascriptreact", "svelte", "typescript", "typescript.tsx", "typescriptreact", "vue" },
                     single_file_support = false,
                     root_dir = lspconfig.util.root_pattern('.git'),
                 })

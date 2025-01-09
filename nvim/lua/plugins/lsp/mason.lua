@@ -31,6 +31,7 @@ return {
         mason_lspconfig.setup({
             -- list of servers for mason to install
             ensure_installed = {
+                "ast_grep",
                 "tinymist",
                 "pylsp",
                 "lua_ls",
@@ -43,6 +44,8 @@ return {
                 "cssls",
                 "sqlls",
                 "ts_ls",
+                "buf_ls",
+                "gopls"
             },
         })
 
